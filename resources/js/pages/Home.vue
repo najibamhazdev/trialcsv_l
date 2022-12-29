@@ -1,19 +1,34 @@
 <template>
     <div class="row">
-        Wellcome, this page will show to all user
+        <h1>List of Agents</h1> 
     </div>
+    
+    <Agentslist></Agentslist>
+    
 </template>
 
 <script>
+import Agentslist from  '../components/Agentslist';
+
 export default {
+    
     name: "Home",
+    components:{
+        Agentslist,
+    },
     data() {
         return {
-            //
+            contacts:null,
+            contact:null,
+            name:null,
+            params:null
         }
-    },
-    created() {
-    },
-    methods: {}
-}
+    }
+    
+    }
 </script>
+<style>
+table{
+    width: 100%;
+}
+</style>
