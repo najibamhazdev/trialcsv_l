@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
-            <a class="navbar-brand" href="#">Trial By Najib Amhaz</a>
+            <a class="navbar-brand" href="/">Trial By Najib Amhaz</a>
             
             
         </nav>

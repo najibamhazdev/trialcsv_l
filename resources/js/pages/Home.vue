@@ -17,12 +17,7 @@ export default {
         Agentslist,
     },
     data() {
-        return {
-            contacts:null,
-            contact:null,
-            name:null,
-            params:null
-        }
+     
     }
     
     }

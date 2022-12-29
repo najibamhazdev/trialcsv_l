@@ -15,7 +15,10 @@
             <tbody >
             <tr v-for="(contact,index) in contacts" :key="contact.id">
                 <td>{{ index+1 }}</td>
-                <td><img :src="contact.mug" class="card-img agent-img"  /></td>
+                <td>
+                    <img :src="contact.mug" class="card-img agent-img" v-if="contact.mug!=null"  />
+                    <img v-bind:src="'/img/' + photo.profile" class="card-img agent-img" v-else /> 
+                </td>
                 <td><router-link :to="{ name: 'contactdetails', params: { name: contact.first_name }}">{{ contact.first_name }} {{ contact.last_name }}</router-link></td>
                 <td>{{ contact.email }}</td>
                 <td>{{ contact.phone }}</td>
@@ -36,10 +39,18 @@
                 contacts:null,
                 contact:null,
                 name:null,
-                params:null
+                params:null,
+                photo: {
+                        profile: 'profile.jpg'
+                    }
             }
         },
-        methods:{},
+        methods:{
+
+            checkavailability(url){
+                
+            }
+        },
         mounted(){
             axios
                 .get('/contacts')
@@ -47,6 +58,8 @@
                 .catch(function(error) {
                         console.log(error);
                 });
+
+                
         }
     }
 </script>
